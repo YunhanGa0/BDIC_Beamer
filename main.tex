@@ -32,6 +32,8 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{natbib}
 \graphicspath{{image/}}
 
 \newcommand{\BDICLogos}[1]{%
@@ -76,34 +78,117 @@
 \end{frame}
 
 \begin{frame}{Contents}
-    \tableofcontents
-\end{frame}
-
-\section{Introduction}
-\begin{frame}{Introduction}
     \begin{itemize}
-        \item Briefly introduce the topic and why it matters.
-        \item Summarize the background in two or three points.
-        \item State the purpose of this presentation.
+        \item Motivation
+        \item Research gap \& Aim of the paper
+        \item Theoretical background
+        \item Methodology
+        \item Data
+        \item Results \& Discussion
+        \item Further research \& Limitations
     \end{itemize}
 \end{frame}
 
-\section{Main Part}
-\begin{frame}{Main Part}
+\section{Motivation}
+\begin{frame}{Motivation}
     \begin{itemize}
-        \item Present your key argument, method, or design.
-        \item Use short bullet points and place figures or tables as needed.
-        \item Keep one clear message per slide.
+        \item Use this slide to explain why the topic matters in practice or theory.
+        \item Start with one strong message in bold, then add a short explanation.
+
+        \vspace{0.2cm}
+        \footnotesize{\textit{Example: mention a policy issue, market trend, research problem, or project motivation.}}
+        \vspace{0.2cm}
+        \normalsize
+
+        \item Add one or two supporting points only.
+        \item Keep the first content slide light and easy to follow.
     \end{itemize}
 \end{frame}
 
-\section{Conclusion}
-\begin{frame}{Conclusion}
+\section{Research Gap \& Aim}
+\begin{frame}{Research gap \& Aim of the paper}
     \begin{itemize}
-        \item Recap the most important takeaway.
-        \item Highlight implications, next steps, or recommendations.
-        \item Leave one final message for the audience.
+        \item Use this slide to explain what is missing in the literature or in existing practice.
+        \item End the slide with a clear research question, project goal, or hypothesis.
+        \item Tables work well here for comparisons or summary statistics.
     \end{itemize}
+
+    \begin{table}[h!]
+        \centering
+        \caption{Summary statistics of XX}
+        \label{tab:summary}
+        \begin{tabular}{lrrr}
+            \toprule
+            Country & Mean X & Min X & Max X \\
+            \midrule
+            AT & 0.29 & 0.28 & 0.30 \\
+            BE & 0.27 & 0.25 & 0.29 \\
+            BG & 0.23 & 0.20 & 0.28 \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\section{Theoretical Background}
+\begin{frame}{Theoretical background}
+    \begin{itemize}
+        \item Summarize the key theory, framework, or model used in your work.
+        \item If needed, include one equation only and explain each variable verbally.
+    \end{itemize}
+
+    \begin{equation}
+        Y = \beta_0 + \beta_1 X + \epsilon
+    \end{equation}
+\end{frame}
+
+\section{Methodology}
+\begin{frame}{Methodology}
+    \begin{itemize}
+        \item Describe your method, model, experiment, case study design, or implementation process.
+        \item Keep it structured: data source, variables, procedure, and evaluation approach.
+        \item If the method is complex, split it across two slides rather than overcrowding one.
+    \end{itemize}
+\end{frame}
+
+\section{Data}
+\begin{frame}{Data}
+    \begin{itemize}
+        \item Use this slide for datasets, sample construction, variables, or materials.
+        \item Mention the time range, source, sample size, and any preprocessing.
+        \item A compact table or flowchart can work well here.
+    \end{itemize}
+\end{frame}
+
+\section{Results \& Discussion}
+\begin{frame}{Results \& Discussion}
+    \begin{itemize}
+        \item Present only the most important result on each slide.
+        \item Figures are often easier to read than dense tables during a presentation.
+        \item Use the discussion point to explain why the result matters.
+    \end{itemize}
+
+    \begin{figure}
+        \centering
+        \caption{Example figure placeholder}
+        \includegraphics[width=0.68\linewidth]{PL_GDP.pdf}
+
+        {\tiny Source: Authors' calculations}
+    \end{figure}
+\end{frame}
+
+\section{Further Research \& Limitations}
+\begin{frame}{Further research \& Limitations}
+    \begin{itemize}
+        \item Briefly acknowledge the main limitation of the current work.
+        \item Suggest what could be improved with more time, more data, or a different method.
+        \item End on a constructive note rather than a purely negative one.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+    \tiny
+    \bibliography{references}
+    \bibliographystyle{apalike}
 \end{frame}
 
 \begin{frame}[c]
