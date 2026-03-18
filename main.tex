@@ -10,6 +10,7 @@
 \definecolor{BDICBlueDark}{HTML}{00417A}
 \definecolor{BDICSoft}{RGB}{240,248,244}
 \definecolor{BDICWhite}{RGB}{255,255,255}
+\definecolor{Black}{RGB}{0,0,0}
 
 \usecolortheme[named=BDICGreen]{structure}
 \setbeamercolor{palette primary}{bg=BDICGreen,fg=white}
@@ -19,9 +20,9 @@
 \setbeamercolor{titlelike}{bg=BDICGreenDark,fg=BDICGreenDark}
 \setbeamercolor{title}{fg=BDICWhite}
 \setbeamercolor{subtitle}{fg=BDICWhite}
-\setbeamercolor{author}{fg=BDICGreenDark}
-\setbeamercolor{institute}{fg=BDICGreenDark}
-\setbeamercolor{date}{fg=BDICGreenDark}
+\setbeamercolor{author}{fg=Black}
+\setbeamercolor{institute}{fg=Black}
+\setbeamercolor{date}{fg=Black}
 \setbeamercolor{frametitle}{fg=BDICGreen,bg=BDICSoft}
 \setbeamercolor{section in toc}{fg=BDICGreenDark}
 \setbeamercolor{item}{fg=BDICBlue}
@@ -33,7 +34,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{booktabs}
-\usepackage{natbib}
+\usepackage[numbers]{natbib}
 \graphicspath{{image/}}
 
 \newcommand{\BDICLogos}[1]{%
@@ -64,8 +65,8 @@
 }
 
 % Update the fields below for each presentation.
-\title[BDIC Presentation]{Presentation Title}
-\subtitle{Subtitle or Course / Project Name}
+\title[Title]{Title of your presentation}
+\subtitle{Subtitle of your presentation}
 \author{Your Name}
 \institute[BDIC]{Beijing-Dublin International College}
 \date{\today}
@@ -82,10 +83,7 @@
         \item Motivation
         \item Research gap \& Aim of the paper
         \item Theoretical background
-        \item Methodology
-        \item Data
         \item Results \& Discussion
-        \item Further research \& Limitations
     \end{itemize}
 \end{frame}
 
@@ -132,7 +130,7 @@
 \section{Theoretical Background}
 \begin{frame}{Theoretical background}
     \begin{itemize}
-        \item Summarize the key theory, framework, or model used in your work.
+        \item Summarize the key theory, framework, or model used in your work \citep{NIPS2017_3f5ee243}.
         \item If needed, include one equation only and explain each variable verbally.
     \end{itemize}
 
@@ -141,23 +139,6 @@
     \end{equation}
 \end{frame}
 
-\section{Methodology}
-\begin{frame}{Methodology}
-    \begin{itemize}
-        \item Describe your method, model, experiment, case study design, or implementation process.
-        \item Keep it structured: data source, variables, procedure, and evaluation approach.
-        \item If the method is complex, split it across two slides rather than overcrowding one.
-    \end{itemize}
-\end{frame}
-
-\section{Data}
-\begin{frame}{Data}
-    \begin{itemize}
-        \item Use this slide for datasets, sample construction, variables, or materials.
-        \item Mention the time range, source, sample size, and any preprocessing.
-        \item A compact table or flowchart can work well here.
-    \end{itemize}
-\end{frame}
 
 \section{Results \& Discussion}
 \begin{frame}{Results \& Discussion}
@@ -176,19 +157,11 @@
     \end{figure}
 \end{frame}
 
-\section{Further Research \& Limitations}
-\begin{frame}{Further research \& Limitations}
-    \begin{itemize}
-        \item Briefly acknowledge the main limitation of the current work.
-        \item Suggest what could be improved with more time, more data, or a different method.
-        \item End on a constructive note rather than a purely negative one.
-    \end{itemize}
-\end{frame}
 
 \begin{frame}[allowframebreaks]{References}
     \tiny
     \bibliography{references}
-    \bibliographystyle{apalike}
+    \bibliographystyle{plainnat}
 \end{frame}
 
 \begin{frame}[c]
