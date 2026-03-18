@@ -1,0 +1,120 @@
+\documentclass[t]{beamer}
+
+\usetheme{Madrid}
+
+% BDIC color palette
+\definecolor{BDICGreen}{HTML}{44B247}
+\definecolor{BDICBlue}{RGB}{0,150,195}
+\definecolor{BDICGreenLight}{HTML}{69C16C}
+\definecolor{BDICGreenDark}{RGB}{34,122,52}
+\definecolor{BDICBlueDark}{HTML}{00417A}
+\definecolor{BDICSoft}{RGB}{240,248,244}
+\definecolor{BDICWhite}{RGB}{255,255,255}
+
+\usecolortheme[named=BDICGreen]{structure}
+\setbeamercolor{palette primary}{bg=BDICGreen,fg=white}
+\setbeamercolor{palette secondary}{bg=BDICBlue,fg=white}
+\setbeamercolor{palette tertiary}{bg=BDICGreenDark,fg=white}
+\setbeamercolor{palette quaternary}{bg=BDICBlueDark,fg=white}
+\setbeamercolor{titlelike}{bg=BDICGreenDark,fg=BDICGreenDark}
+\setbeamercolor{title}{fg=BDICWhite}
+\setbeamercolor{subtitle}{fg=BDICWhite}
+\setbeamercolor{author}{fg=BDICGreenDark}
+\setbeamercolor{institute}{fg=BDICGreenDark}
+\setbeamercolor{date}{fg=BDICGreenDark}
+\setbeamercolor{frametitle}{fg=BDICGreen,bg=BDICSoft}
+\setbeamercolor{section in toc}{fg=BDICGreenDark}
+\setbeamercolor{item}{fg=BDICBlue}
+\setbeamerfont{caption}{size=\footnotesize}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{tikz}
+\graphicspath{{image/}}
+
+\newcommand{\BDICLogos}[1]{%
+    \includegraphics[height=#1,keepaspectratio]{BJUT_Logo.pdf}\hspace{0.25cm}%
+    \includegraphics[height=#1,keepaspectratio]{UCD_Logo.pdf}%
+}
+
+\addtobeamertemplate{frametitle}{}{%
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north east, xshift=-0.3cm, yshift=-0.25cm, inner sep=0pt] at (current page.north east) {
+            \BDICLogos{0.9cm}
+        };
+    \end{tikzpicture}%
+}
+
+\newcommand{\FirstLastPageLayout}{
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north east, xshift=-0.3cm, yshift=-0.3cm, inner sep=0pt] at (current page.north east) {
+            \BDICLogos{1.1cm}
+        };
+        \node[anchor=south west, xshift=0.5cm, yshift=0.5cm] at (current page.south west) {
+            \begin{minipage}{0.72\paperwidth}
+                \textcolor{BDICGreenDark}{\footnotesize Beijing-Dublin International College (BDIC)}\\
+                \textcolor{BDICBlueDark}{\footnotesize Beijing University of Technology $\cdot$ University College Dublin}
+            \end{minipage}
+        };
+    \end{tikzpicture}
+}
+
+% Update the fields below for each presentation.
+\title[BDIC Presentation]{Presentation Title}
+\subtitle{Subtitle or Course / Project Name}
+\author{Your Name}
+\institute[BDIC]{Beijing-Dublin International College}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \FirstLastPageLayout
+    \titlepage
+\end{frame}
+
+\begin{frame}{Contents}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\begin{frame}{Introduction}
+    \begin{itemize}
+        \item Briefly introduce the topic and why it matters.
+        \item Summarize the background in two or three points.
+        \item State the purpose of this presentation.
+    \end{itemize}
+\end{frame}
+
+\section{Main Part}
+\begin{frame}{Main Part}
+    \begin{itemize}
+        \item Present your key argument, method, or design.
+        \item Use short bullet points and place figures or tables as needed.
+        \item Keep one clear message per slide.
+    \end{itemize}
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}{Conclusion}
+    \begin{itemize}
+        \item Recap the most important takeaway.
+        \item Highlight implications, next steps, or recommendations.
+        \item Leave one final message for the audience.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c]
+    \FirstLastPageLayout
+    \centering
+    \Huge \textcolor{BDICGreen}{Thank you for your attention}
+
+    \vspace{1.5cm}
+    \normalsize
+    \textbf{Your Name} \\
+    \href{mailto:your.email@bjut.edu.cn}{your.email@bjut.edu.cn}
+\end{frame}
+
+\end{document}
