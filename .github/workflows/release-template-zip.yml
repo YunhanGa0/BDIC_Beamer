@@ -1,0 +1,50 @@
+name: Release Template ZIP
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'main.tex'
+      - 'references.bib'
+      - 'README.md'
+      - 'image/**'
+      - '.github/workflows/release-template-zip.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build template bundle
+        run: |
+          mkdir -p dist/BDIC_Beamer_Template/image
+          cp main.tex dist/BDIC_Beamer_Template/
+          cp references.bib dist/BDIC_Beamer_Template/
+          cp README.md dist/BDIC_Beamer_Template/
+          cp -r image/. dist/BDIC_Beamer_Template/image/
+          cd dist
+          zip -r BDIC_Beamer_Template.zip BDIC_Beamer_Template
+
+      - name: Create or update release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="template-latest"
+          ASSET="dist/BDIC_Beamer_Template.zip"
+          TITLE="BDIC Beamer Template (Latest)"
+          NOTES="Auto-updated from commit ${GITHUB_SHA}"
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$ASSET" --clobber
+            gh release edit "$TAG" --title "$TITLE" --notes "$NOTES"
+          else
+            gh release create "$TAG" "$ASSET" --title "$TITLE" --notes "$NOTES"
+          fi

@@ -35,3 +35,18 @@ Below are 8 sample presentation slides using this template:
 - The right-top corner shows the BJUT and UCD logos side by side.
 - The theme uses BDIC green and blue accents.
 
+## Auto ZIP Release (GitHub Actions)
+
+This repo includes a workflow at `.github/workflows/release-template-zip.yml`.
+
+- Trigger: push to `main` with changes in `main.tex`, `references.bib`, `README.md`, `image/**`, or the workflow file itself
+- Manual trigger: **Actions** -> **Release Template ZIP** -> **Run workflow**
+- Output: updates a fixed GitHub Release tag `template-latest` with asset `BDIC_Beamer_Template.zip`
+
+The ZIP contains:
+
+- `main.tex`
+- `references.bib`
+- `README.md`
+- `image/`
+
