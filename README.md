@@ -1,19 +1,10 @@
-# BDIC Beamer Template
+# LaTex BDIC Beamer Template
 
 A clean Beamer template for Beijing-Dublin International College (BDIC),
 Beijing University of Technology, and University College Dublin.
 
-## Disclaimer
-
 > [!WARNING]
-> \> 🚨 This is **NOT an official template** of  
-> \> Beijing University of Technology or University College Dublin.
-
-⚠️ **IMPORTANT NOTICE**
-
-**This is NOT an official template** for Beijing University of Technology or University College Dublin.
-
-This template is an **unofficial adaptation** inspired by the [VSE FMV Presentation Template](https://www.overleaf.com/latex/templates/vse-fmv-presentation-template/bnwxsdjhjkvv) and is provided as-is for personal use only. If you require an official template or branding guidelines, please contact the respective institutions directly.
+> This is **NOT an official template** of Beijing-Dublin International College (BDIC). This template is an **unofficial adaptation** inspired by the [VSE FMV Presentation Template](https://www.overleaf.com/latex/templates/vse-fmv-presentation-template/bnwxsdjhjkvv) and is provided as-is for personal use only. If you require an official template or branding guidelines, please contact the respective institutions directly.
 
 ## Showcase
 
