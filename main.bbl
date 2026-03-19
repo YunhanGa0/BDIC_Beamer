@@ -1,0 +1,11 @@
+\begin{thebibliography}{}
+
+\bibitem[Vaswani et~al., 2017]{NIPS2017_3f5ee243}
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.~N.,
+  Kaiser, L.~u., and Polosukhin, I. (2017).
+\newblock Attention is all you need.
+\newblock In Guyon, I., Luxburg, U.~V., Bengio, S., Wallach, H., Fergus, R.,
+  Vishwanathan, S., and Garnett, R., editors, {\em Advances in Neural
+  Information Processing Systems}, volume~30. Curran Associates, Inc.
+
+\end{thebibliography}

@@ -49,9 +49,15 @@ jobs:
           OVERLEAF_PASSWORD: ${{ secrets.OVERLEAF_PASSWORD }}
         run: |
           OVERLEAF_AUTH_TOKEN="${OVERLEAF_GIT_TOKEN:-$OVERLEAF_PASSWORD}"
+          export OVERLEAF_AUTH_TOKEN
 
           if [ -z "$OVERLEAF_GIT_URL" ] || [ -z "$OVERLEAF_USERNAME" ] || [ -z "$OVERLEAF_AUTH_TOKEN" ]; then
             echo "Missing required secrets: OVERLEAF_GIT_URL, OVERLEAF_USERNAME, and OVERLEAF_GIT_TOKEN (or OVERLEAF_PASSWORD)"
+            exit 1
+          fi
+
+          if ! printf '%s' "$OVERLEAF_GIT_URL" | grep -Eq '^https://git\.overleaf\.com/.+'; then
+            echo "Invalid OVERLEAF_GIT_URL. Expected format: https://git.overleaf.com/<project_id>"
             exit 1
           fi
 
@@ -66,7 +72,12 @@ jobs:
 
           chmod +x /tmp/overleaf-askpass.sh
 
-          git init
+          if ! GIT_ASKPASS=/tmp/overleaf-askpass.sh GIT_TERMINAL_PROMPT=0 git ls-remote "$OVERLEAF_GIT_URL" >/dev/null 2>&1; then
+            echo "Cannot access Overleaf Git repository. Check project Git URL, username, token, and whether Git bridge is enabled for your account/project."
+            exit 1
+          fi
+
+          git init -b main
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
