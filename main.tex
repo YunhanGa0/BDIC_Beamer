@@ -1,69 +1,6 @@
 \documentclass[t]{beamer}
 
-\usetheme{Madrid}
-
-% BDIC color palette
-\definecolor{BDICGreen}{HTML}{44B247}
-\definecolor{BDICBlue}{RGB}{0,150,195}
-\definecolor{BDICGreenLight}{HTML}{69C16C}
-\definecolor{BDICGreenDark}{RGB}{34,122,52}
-\definecolor{BDICBlueDark}{HTML}{00417A}
-\definecolor{BDICSoft}{RGB}{240,248,244}
-\definecolor{BDICWhite}{RGB}{255,255,255}
-\definecolor{Black}{RGB}{0,0,0}
-
-\usecolortheme[named=BDICGreen]{structure}
-\setbeamercolor{palette primary}{bg=BDICGreen,fg=white}
-\setbeamercolor{palette secondary}{bg=BDICBlue,fg=white}
-\setbeamercolor{palette tertiary}{bg=BDICGreenDark,fg=white}
-\setbeamercolor{palette quaternary}{bg=BDICBlueDark,fg=white}
-\setbeamercolor{titlelike}{bg=BDICGreenDark,fg=BDICGreenDark}
-\setbeamercolor{title}{fg=BDICWhite}
-\setbeamercolor{subtitle}{fg=BDICWhite}
-\setbeamercolor{author}{fg=Black}
-\setbeamercolor{institute}{fg=Black}
-\setbeamercolor{date}{fg=Black}
-\setbeamercolor{frametitle}{fg=BDICGreen,bg=BDICSoft}
-\setbeamercolor{section in toc}{fg=BDICGreenDark}
-\setbeamercolor{item}{fg=BDICBlue}
-\setbeamerfont{caption}{size=\footnotesize}
-
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{hyperref}
-\usepackage{graphicx}
-\usepackage{tikz}
-\usepackage{booktabs}
-\usepackage[numbers]{natbib}
-\graphicspath{{image/}}
-
-\newcommand{\BDICLogos}[1]{%
-    \includegraphics[height=#1,keepaspectratio]{BJUT_Logo.pdf}\hspace{0.25cm}%
-    \includegraphics[height=#1,keepaspectratio]{UCD_Logo.pdf}%
-}
-
-\addtobeamertemplate{frametitle}{}{%
-    \begin{tikzpicture}[remember picture,overlay]
-        \node[anchor=north east, xshift=-0.3cm, yshift=-0.05cm, inner sep=0pt] at (current page.north east) {
-            \BDICLogos{0.9cm}
-        };
-    \end{tikzpicture}%
-}
-
-\newcommand{\FirstLastPageLayout}{
-    \begin{tikzpicture}[remember picture,overlay]
-        \node[anchor=north east, xshift=-0.3cm, yshift=-0.3cm, inner sep=0pt] at (current page.north east) {
-            \BDICLogos{1.1cm}
-        };
-        \node[anchor=south, yshift=0.38cm] at (current page.south) {
-            {\footnotesize
-                \textcolor{BDICBlue}{Beijing University of Technology}
-                \textcolor{Black}{$\cdot$}
-                \textcolor{BDICGreenDark}{University College Dublin}
-            }
-        };
-    \end{tikzpicture}
-}
+\usepackage{bdicbeamer}
 
 % Update the fields below for each presentation.
 \title[Title]{Title of your presentation}
@@ -92,15 +29,15 @@
 \begin{frame}{Motivation}
     \begin{itemize}
         \item Use this slide to explain why the topic matters in practice or theory.
-        \item Start with one strong message in bold, then add a short explanation.
-
         \vspace{0.2cm}
         \footnotesize{\textit{Example: mention a policy issue, market trend, research problem, or project motivation.}}
         \vspace{0.2cm}
         \normalsize
 
-        \item Add one or two supporting points only.
-        \item Keep the first content slide light and easy to follow.
+        \begin{block}{Key Motivation}
+            This is the core message of your study in one sentence. Keep it concise and audience-focused.
+        \end{block}
+
     \end{itemize}
 \end{frame}
 

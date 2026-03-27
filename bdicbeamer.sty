@@ -1,0 +1,67 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bdicbeamer}[2026/03/27 BDIC Beamer template style]
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{hyperref}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{booktabs}
+\RequirePackage[numbers]{natbib}
+
+% BDIC color palette
+\definecolor{BDICGreen}{HTML}{44B247}
+\definecolor{BDICBlue}{RGB}{0,150,195}
+\definecolor{BDICGreenLight}{HTML}{69C16C}
+\definecolor{BDICGreenDark}{RGB}{34,122,52}
+\definecolor{BDICBlueDark}{HTML}{00417A}
+\definecolor{BDICSoft}{RGB}{240,248,244}
+\definecolor{BDICWhite}{RGB}{255,255,255}
+\definecolor{Black}{RGB}{0,0,0}
+
+\usetheme{Madrid}
+\usecolortheme[named=BDICGreen]{structure}
+\setbeamercolor{palette primary}{bg=BDICGreen,fg=white}
+\setbeamercolor{palette secondary}{bg=BDICBlue,fg=white}
+\setbeamercolor{palette tertiary}{bg=BDICGreenDark,fg=white}
+\setbeamercolor{palette quaternary}{bg=BDICBlueDark,fg=white}
+\setbeamercolor{titlelike}{bg=BDICGreenDark,fg=BDICGreenDark}
+\setbeamercolor{title}{fg=BDICWhite}
+\setbeamercolor{subtitle}{fg=BDICWhite}
+\setbeamercolor{author}{fg=Black}
+\setbeamercolor{institute}{fg=Black}
+\setbeamercolor{date}{fg=Black}
+\setbeamercolor{frametitle}{fg=BDICGreen,bg=BDICSoft}
+\setbeamercolor{section in toc}{fg=BDICGreenDark}
+\setbeamercolor{item}{fg=BDICBlue}
+\setbeamerfont{caption}{size=\footnotesize}
+
+\graphicspath{{image/}}
+
+\newcommand{\BDICLogos}[1]{%
+    \includegraphics[height=#1,keepaspectratio]{BJUT_Logo.pdf}\hspace{0.25cm}%
+    \includegraphics[height=#1,keepaspectratio]{UCD_Logo.pdf}%
+}
+
+\addtobeamertemplate{frametitle}{}{%
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north east, xshift=-0.3cm, yshift=-0.05cm, inner sep=0pt] at (current page.north east) {
+            \BDICLogos{0.9cm}
+        };
+    \end{tikzpicture}%
+}
+
+\newcommand{\FirstLastPageLayout}{
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north east, xshift=-0.3cm, yshift=-0.3cm, inner sep=0pt] at (current page.north east) {
+            \BDICLogos{1.1cm}
+        };
+        \node[anchor=south, yshift=0.38cm] at (current page.south) {
+            {\footnotesize
+                \textcolor{BDICBlue}{Beijing University of Technology}
+                \textcolor{Black}{$\cdot$}
+                \textcolor{BDICGreenDark}{University College Dublin}
+            }
+        };
+    \end{tikzpicture}
+}
