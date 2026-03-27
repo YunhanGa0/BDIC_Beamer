@@ -13,7 +13,7 @@ Below are 8 sample presentation slides using this template:
 |                      |                      |
 | -------------------- | -------------------- |
 | ![1](Showcase/1.jpg) | ![2](Showcase/2.jpg) |
-| ![3](Showcase/3.jpg) | ![4](Showcase/4.jpg) |
+| ![3](Showcase/3.png) | ![4](Showcase/4.jpg) |
 | ![5](Showcase/5.jpg) | ![6](Showcase/6.jpg) |
 | ![7](Showcase/7.jpg) | ![8](Showcase/8.jpg) |
 
